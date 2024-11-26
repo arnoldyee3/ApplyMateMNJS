@@ -26,28 +26,18 @@ export default function Header() {
       {/* Top Bar */}
       <div
         style={{
-          height: '100px',
+          height: '60px',
           backgroundColor: '#f8f9fa',
           display: 'flex',
           alignItems: 'center', // Vertically center the items
-          padding: '0 20px',
+          padding: '0 10px',
           boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
           borderBottom: '2px solid #e0e0e0', // Border line below the top bar
         }}
       >
         {/* Left side - ApplyMate Text */}
-        <Text
-          style={{
-            fontSize: '48px',
-            fontWeight: 600,
-            borderRight: '2px solid #e0e0e0',  // Border at 300px mark (right of "ApplyMate")
-            flex: '0 0 280px',  // Ensures the "ApplyMate" stays within the left area
-            cursor: 'pointer'
-          }}
-          onClick={() => router.push('/')}
-        >
-          ApplyMate
-        </Text>
+
+        <img src="/images/logo.png" width="167" height="50" style={{ marginRight: '60px' }}  />
 
         {/* Right side - Page Name Text */}
         <div
@@ -61,7 +51,7 @@ export default function Header() {
         >
           <Text
             style={{
-              fontSize: '60px',
+              fontSize: '30px',
               fontWeight: 400,
             }}
           >

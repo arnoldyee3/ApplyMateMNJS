@@ -7,42 +7,42 @@ export default function Sidebar() {
   return (
     <div
       style={{
-        width: '300px',
+        width: '200px',
         height: '100vh',
         position: 'fixed',
         backgroundColor: '#f8f9fa',
-        padding: '20px',
+        padding: '0px',
         boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)'
       }}
     >
       {/* Applications Button */}
       <NavLink
         label={
-          <div style={{ display: 'flex', alignItems: 'center', fontSize: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px' }}>
             <img src="/images/applications-icon.png" alt="Job Applications"width="48" height="48"  style={{ marginRight: '10px' }} />
             Job Applications
           </div>
         }
         onClick={() => router.push('/applications')}
-        style={{ marginBottom: '50px', marginTop: '50px' }}
+        style={{ marginBottom: '20px', marginTop: '0px' }}
       />
 
       {/* Statistics Button */}
       <NavLink
         label={
-          <div style={{ display: 'flex', alignItems: 'center', fontSize: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px' }}>
             <img src="/images/statistics-icon.png" alt="Statistics" width="48" height="48" style={{ marginRight: '10px' }}  />
             Statistics
           </div>
         }
         onClick={() => router.push('/stats')}
-        style={{ marginBottom: '50px' }}
+        style={{ marginBottom: '20px' }}
       />
 
       {/* Journaling Button */}
       <NavLink
         label={
-          <div style={{ display: 'flex', alignItems: 'center', fontSize: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px' }}>
             <img src="/images/journaling-icon.png" alt="Journaling" width="48" height="48" style={{ marginRight: '10px' }} />
             Journaling
           </div>
