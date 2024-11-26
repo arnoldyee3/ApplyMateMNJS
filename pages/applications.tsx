@@ -7,8 +7,6 @@ import {
   Card,
   Modal,
   TextInput,
-  NumberInput,
-  MenuDropdown,
   Select,
   Rating,
   Textarea,
@@ -222,7 +220,7 @@ export default function ApplicationsPage() {
                 />
                 <ActionIcon
                   color="blue"
-                  onClick={() => handleEditJob({ ...app, deadline: new Date(app.deadline), description: app.description, notes: app.description })}
+                  onClick={() => handleEditJob({ ...app, deadline: new Date(app.deadline), description: app.description, notes: app.notes })}
                   title="Edit Job"
                 >
                   <IconEdit size={16} />
