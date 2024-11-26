@@ -1,11 +1,11 @@
 import { Group } from "@mantine/core";
-import Topbar from '../components/Topbar';
-import Sidebar from '../components/Sidebar';
+import Header from '../components/header';
+import Sidebar from '../components/sidebar';
 
 export default function JournalingPage() {
     return (
       <div>
-        <Topbar />
+        <Header />
         <Sidebar />
         <Group mt={50} justify="center">
           <h1>Journaling Page</h1>

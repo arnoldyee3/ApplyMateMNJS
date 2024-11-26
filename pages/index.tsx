@@ -10,9 +10,9 @@ export default function IndexPage() {
         <h1>ApplyMate</h1>
       </Group>
       <Group mt={50} justify="center">
-        <Button size="xl" onClick={() => router.push('/applications')}>Applications</Button>
+        <Button size="xl" onClick={() => router.push('/applications')}>Job Applications</Button>
         <Button size="xl" onClick={() => router.push('/journaling')}>Journaling</Button>
-        <Button size="xl" onClick={() => router.push('/stats')}>Stats </Button>
+        <Button size="xl" onClick={() => router.push('/stats')}>Statistics </Button>
       </Group>
     </div>
   );

@@ -1,8 +1,8 @@
 import { Text } from '@mantine/core';
 import { useRouter } from 'next/router';
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar';
 
-export default function StatsPage() {
+export default function Header() {
   const router = useRouter();
 
   // Function to get page name based on the current route
@@ -42,7 +42,9 @@ export default function StatsPage() {
             fontWeight: 600,
             borderRight: '2px solid #e0e0e0',  // Border at 300px mark (right of "ApplyMate")
             flex: '0 0 280px',  // Ensures the "ApplyMate" stays within the left area
+            cursor: 'pointer'
           }}
+          onClick={() => router.push('/')}
         >
           ApplyMate
         </Text>
