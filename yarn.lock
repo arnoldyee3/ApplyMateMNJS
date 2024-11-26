@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.20.13":
+"@babel/runtime@^7.20.13", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.26.0"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.26.0.tgz"
   integrity sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==
@@ -63,7 +63,7 @@
   dependencies:
     "@floating-ui/dom" "^1.0.0"
 
-"@floating-ui/react@^0.26.27":
+"@floating-ui/react@^0.26.28":
   version "0.26.28"
   resolved "https://registry.npmjs.org/@floating-ui/react/-/react-0.26.28.tgz"
   integrity sha512-yORQuuAtVpiRjpMhdc0wJj06b9JFjrYF4qp96j++v2NBpbi6SEGF7donUJ3TMieerQ6qVkAv1tgr7L4r5roTqw==
@@ -96,17 +96,10 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz"
   integrity sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==
 
-"@img/sharp-darwin-arm64@0.33.5":
+"@img/sharp-win32-x64@0.33.5":
   version "0.33.5"
-  resolved "https://registry.npmjs.org/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.33.5.tgz"
-  integrity sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==
-  optionalDependencies:
-    "@img/sharp-libvips-darwin-arm64" "1.0.4"
-
-"@img/sharp-libvips-darwin-arm64@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/@img/sharp-libvips-darwin-arm64/-/sharp-libvips-darwin-arm64-1.0.4.tgz"
-  integrity sha512-XblONe153h0O2zuFfTAbQYAX2JhYmDHeWikp1LM9Hul9gVPjFY427k6dFEcOL72O01QxQsWi761svJ/ev9xEDg==
+  resolved "https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.33.5.tgz"
+  integrity sha512-MpY/o8/8kj+EcnxwvrP4aTJSWw/aZ7JIGR4aBeZkZw5B7/Jn+tY9/VNwtcoGmdT7GfggGIU4kygOMSbYnOrAbg==
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
@@ -120,22 +113,55 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@mantine/core@^7.14.1":
-  version "7.14.1"
-  resolved "https://registry.npmjs.org/@mantine/core/-/core-7.14.1.tgz"
-  integrity sha512-oHqaOE1n4KJkvJgF628OCVXE2zUgkEotEsPUdVaC58qRfJ7SvZAI26JNbUG8+MoqHHEqHKtBaRkTyuEVMbomxw==
+"@mantine/core@^7.14.2", "@mantine/core@7.14.2":
+  version "7.14.2"
+  resolved "https://registry.npmjs.org/@mantine/core/-/core-7.14.2.tgz"
+  integrity sha512-lq5l8T6TRkaCbs3HeaRDvUG80JbrwCxQPF5pwNP4yRrdln99hWpGtyNm0DSfcN5u1eOQRudOtAc+R8TfU+2GXw==
   dependencies:
-    "@floating-ui/react" "^0.26.27"
+    "@floating-ui/react" "^0.26.28"
     clsx "^2.1.1"
     react-number-format "^5.4.2"
     react-remove-scroll "^2.6.0"
-    react-textarea-autosize "8.5.4"
-    type-fest "^4.26.1"
+    react-textarea-autosize "8.5.5"
+    type-fest "^4.27.0"
 
-"@mantine/hooks@7.14.1":
-  version "7.14.1"
-  resolved "https://registry.npmjs.org/@mantine/hooks/-/hooks-7.14.1.tgz"
-  integrity sha512-VlgTyV/9WNFCwCshW1KHMYNzLt+M8aG68E1lWaqOXtyWSLJo+X5zQJGg0f8bwGbJvIMQCpQd0yTLfnjD6uAtrA==
+"@mantine/dates@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.npmjs.org/@mantine/dates/-/dates-7.14.2.tgz"
+  integrity sha512-tyEA/HuG5yXJNV0PKRfJEwER5+uQoxd9bmM3O90F5yC652H4Kxlt//yN2bf67yt/WFx7SQGid1ESFbj4od7w3A==
+  dependencies:
+    clsx "^2.1.1"
+
+"@mantine/form@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.npmjs.org/@mantine/form/-/form-7.14.2.tgz"
+  integrity sha512-IXgvEjIivXBNU4+sRinXGCSziRpx+pVeazuZixU3BxiSBap36gLxCbcWiyG3PkI4NkfI70YTTWFFeX39C06lzg==
+  dependencies:
+    fast-deep-equal "^3.1.3"
+    klona "^2.0.6"
+
+"@mantine/hooks@^7.14.2", "@mantine/hooks@7.14.2":
+  version "7.14.2"
+  resolved "https://registry.npmjs.org/@mantine/hooks/-/hooks-7.14.2.tgz"
+  integrity sha512-WN0bEJHw2Lh/2PLqik8rqITJRZAu6A1FK6f+H0SNTrQuWYBPSHdNTqM8hntDnhpM/2mZ52t3VWYgvNVGczLxIw==
+
+"@mantine/modals@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.npmjs.org/@mantine/modals/-/modals-7.14.2.tgz"
+  integrity sha512-Sr8JRS5waZGnUZwKK9tB2m/Z78l3lkg4TZsrtJiTivaM6+xSyANSiGuVLtiCpsZ/CdtrG9KVcm7wzZilLhpWTA==
+
+"@mantine/notifications@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.npmjs.org/@mantine/notifications/-/notifications-7.14.2.tgz"
+  integrity sha512-BXafA7YeDNwziFkZ0BnK5iEN0Cw3CRk/pnZ6E6u9eGCve5iMkaCTk0LaKnT2DPmPaAqEgmnnRduy6Akaalzjhw==
+  dependencies:
+    "@mantine/store" "7.14.2"
+    react-transition-group "4.4.5"
+
+"@mantine/store@7.14.2":
+  version "7.14.2"
+  resolved "https://registry.npmjs.org/@mantine/store/-/store-7.14.2.tgz"
+  integrity sha512-OCur2rymfOw+tEFDQjUvVoAGl9DRnyIZ6gJyGaj73hrxSMUyrdsekdYwN5HpbI6qXqW0h7u1aV0tNf0vvIUQDA==
 
 "@next/env@15.0.1":
   version "15.0.1"
@@ -149,10 +175,10 @@
   dependencies:
     glob "10.3.10"
 
-"@next/swc-darwin-arm64@15.0.1":
+"@next/swc-win32-x64-msvc@15.0.1":
   version "15.0.1"
-  resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-15.0.1.tgz"
-  integrity sha512-C9k/Xv4sxkQRTA37Z6MzNq3Yb1BJMmSqjmwowoWEpbXTkAdfOwnoKOpAb71ItSzoA26yUTIo6ZhN8rKGu4ExQw==
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.0.1.tgz"
+  integrity sha512-4Ho2ggvDdMKlZ/0e9HNdZ9ngeaBwtc+2VS5oCeqrbXqOgutX6I4U2X/42VBw0o+M5evn4/7v3zKgGHo+9v/VjA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -658,6 +684,11 @@ data-view-byte-offset@^1.0.0:
     es-errors "^1.3.0"
     is-data-view "^1.0.1"
 
+dayjs@^1.11.13, dayjs@>=1.0.0:
+  version "1.11.13"
+  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.13.tgz"
+  integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
+
 debug@^3.2.7:
   version "3.2.7"
   resolved "https://registry.npmjs.org/debug/-/debug-3.2.7.tgz"
@@ -735,6 +766,14 @@ doctrine@^3.0.0:
   integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
   dependencies:
     esutils "^2.0.2"
+
+dom-helpers@^5.0.1:
+  version "5.2.1"
+  resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.1.tgz"
+  integrity sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+    csstype "^3.0.2"
 
 eastasianwidth@^0.2.0:
   version "0.2.0"
@@ -1702,6 +1741,11 @@ keyv@^4.5.3:
   dependencies:
     json-buffer "3.0.1"
 
+klona@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/klona/-/klona-2.0.6.tgz"
+  integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
+
 language-subtag-registry@^0.3.20:
   version "0.3.23"
   resolved "https://registry.npmjs.org/language-subtag-registry/-/language-subtag-registry-0.3.23.tgz"
@@ -2095,7 +2139,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prop-types@^15.8.1:
+prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2119,7 +2163,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-"react-dom@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.2.0 || 19.0.0-rc-69d4b800-20241021", "react-dom@^18.x || ^19.x", react-dom@>=16.8.0, react-dom@18.3.1:
+"react-dom@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.2.0 || 19.0.0-rc-69d4b800-20241021", "react-dom@^18.x || ^19.x", react-dom@>=16.6.0, react-dom@>=16.8.0, react-dom@18.3.1:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -2165,16 +2209,26 @@ react-style-singleton@^2.2.1:
     invariant "^2.2.4"
     tslib "^2.0.0"
 
-react-textarea-autosize@8.5.4:
-  version "8.5.4"
-  resolved "https://registry.npmjs.org/react-textarea-autosize/-/react-textarea-autosize-8.5.4.tgz"
-  integrity sha512-eSSjVtRLcLfFwFcariT77t9hcbVJHQV76b51QjQGarQIHml2+gM2lms0n3XrhnDmgK5B+/Z7TmQk5OHNzqYm/A==
+react-textarea-autosize@8.5.5:
+  version "8.5.5"
+  resolved "https://registry.npmjs.org/react-textarea-autosize/-/react-textarea-autosize-8.5.5.tgz"
+  integrity sha512-CVA94zmfp8m4bSHtWwmANaBR8EPsKy2aZ7KwqhoS4Ftib87F9Kvi7XQhOixypPLMc6kVYgOXvKFuuzZDpHGRPg==
   dependencies:
     "@babel/runtime" "^7.20.13"
     use-composed-ref "^1.3.0"
     use-latest "^1.2.1"
 
-"react@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0 || 19.0.0-rc-69d4b800-20241021", react@^18.3.1, "react@^18.x || ^19.x", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0", react@>=16.8.0, react@18.3.1:
+react-transition-group@4.4.5:
+  version "4.4.5"
+  resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
+  integrity sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    dom-helpers "^5.0.1"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+
+"react@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0 || 19.0.0-rc-69d4b800-20241021", react@^18.3.1, "react@^18.x || ^19.x", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0 || ^19.0.0-0", react@>=16.6.0, react@>=16.8.0, react@18.3.1:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
@@ -2606,7 +2660,7 @@ type-fest@^0.20.2:
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.20.2.tgz"
   integrity sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==
 
-type-fest@^4.26.1:
+type-fest@^4.27.0:
   version "4.28.0"
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-4.28.0.tgz"
   integrity sha512-jXMwges/FVbFRe5lTMJZVEZCrO9kI9c8k0PA/z7nF3bo0JSCCLysvokFjNPIUK/itEMas10MQM+AiHoHt/T/XA==

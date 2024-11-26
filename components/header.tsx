@@ -37,7 +37,7 @@ export default function Header() {
       >
         {/* Left side - ApplyMate Text */}
 
-        <img src="/images/logo.png" width="167" height="50" style={{ marginRight: '60px' }}  />
+        <img src="/images/logo.png" alt = "" width="167" height="50" style={{ marginRight: '60px' }}  />
 
         {/* Right side - Page Name Text */}
         <div
