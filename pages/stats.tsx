@@ -8,19 +8,20 @@ export default function statsPage() {
       <div>
         <Header />
         <Sidebar />
-        {/* <div style={{ position: 'relative', height: '300px' }}>
+        <StatsHeader />
+        <div style={{ position: 'relative', height: '300px' }}>
           <Group
             style={{
               position: 'absolute',
-              top: '0px', // Adjust the position as needed
-              left: '450px', // Center horizontally
-              transform: 'translateX(-50%)', // Center adjustment
+              top: '0px',
+              left: '415px', 
+              transform: 'translateX(-50%)', 
               textAlign: 'center',
             }}
           >
-            <h1>Select a tab to start</h1>
+            <h2>Select a tab to start</h2>
           </Group>
-        </div> */}
+        </div>
       </div>
     );
 }

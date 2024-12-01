@@ -35,7 +35,7 @@ export default function Sidebar() {
             Statistics
           </div>
         }
-        onClick={() => router.push('/stats')}
+        onClick={() => router.push('/statsApplications')}
         style={{ marginBottom: '50px' }}
       />
 
