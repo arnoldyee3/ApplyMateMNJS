@@ -1,13 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { getPool } from '../../components/db.js';
 import mysql from 'mysql2/promise';
 
 // Create database connection pool
-const pool = mysql.createPool({
-  host: 'sql5.freesqldatabase.com',
-  user: 'sql5750355',
-  password: 'wsp919t2xI',
-  database: 'sql5750355'
-})
+// const pool = mysql.createPool({
+//   host: 'sql5.freesqldatabase.com',
+//   user: 'sql5750355',
+//   password: 'wsp919t2xI',
+//   database: 'sql5750355'
+// })
 // const pool = mysql.createPool({
 //   host: 'localhost',
 //   user: 'root',
@@ -19,6 +20,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { method, body, query } = req;
 
   try {
+    const pool = await getPool();
+
     if (method === 'GET') {
       const [rows] = await pool.query('SELECT * FROM applications');
       return res.status(200).json(rows);

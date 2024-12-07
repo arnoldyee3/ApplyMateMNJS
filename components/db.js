@@ -1,24 +1,25 @@
 // db.js
-const mysql = require('mysql2');
+import mysql from 'mysql2/promise';
 
-// Set up the connection
-const connection = mysql.createConnection({
-  host: 'sql5.freesqldatabase.com',
-  user: 'sql5750355',
-  password: 'wsp919t2xI',
-  database: 'sql5750355'
-  // host: 'localhost',   // Use 'localhost' if running locally
-  // user: 'root',        // Your MySQL username (default is 'root')
-  // password: 'password', // Your MySQL password
-  // database: 'job_applications'
-});
+let pool;
 
-connection.connect((err) => {
-  if (err) {
-    console.error('error connecting to the database:', err.stack);
-    return;
+const getPool = () => {
+  if (!pool) {
+    // Initialize the pool only once
+    pool = mysql.createPool({
+      host: 'sql5.freesqldatabase.com',
+      user: 'sql5750355',
+      password: 'wsp919t2xI',
+      database: 'sql5750355',
+      waitForConnections: true, // Wait for a free connection in the pool
+      connectionLimit: 10, // Maximum number of connections in the pool
+      queueLimit: 0, // Unlimited queueing (can adjust based on needs)
+      maxIdle: 0,
+      enableKeepAlive: false,
+      idleTimeout: 0
+    });
   }
-  console.log('connected to the database');
-});
+  return pool;
+};
 
-module.exports = connection;
+export { getPool };

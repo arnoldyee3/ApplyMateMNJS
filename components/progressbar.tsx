@@ -91,43 +91,33 @@ const ApplicationProgressBar: React.FC<ApplicationProgressBarProps> = ({
 
       {!isRejected && (
         <div style={{ position: "relative" }}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             {statuses.slice(0, -1).map((status, index) => (
               <div
                 key={status}
                 style={{
                   cursor: "pointer",
-                  color: index <= currentIndex ? "blue" : "gray",
+                  backgroundColor: index <= currentIndex ? "blue" : "gray",
+                  color: "white",
+                  padding: "10px 20px", // Make the button area larger
+                  borderRadius: "10px", // Add rounded corners
+                  fontSize: "14px", // Make text slightly larger
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  userSelect: "none",
                 }}
                 onClick={() => handleStatusClick(index)}
               >
-                •
+                {status}
               </div>
             ))}
           </div>
-        </div>
-      )}
-
-      {!isRejected && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "10px",
-          }}
-        >
-          {statuses.slice(0, -1).map((status) => (
-            <Text
-              key={status}
-              size="xs"
-              style={{
-                color: status === currentStatus ? "blue" : "gray",
-                fontWeight: status === currentStatus ? "bold" : "normal",
-              }}
-            >
-              {status}
-            </Text>
-          ))}
         </div>
       )}
     </div>

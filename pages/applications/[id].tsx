@@ -77,8 +77,66 @@ const ApplicationDetails = () => {
 
         {/* Individual input fields */}
         <div>
+{/*           
+          <div
+            style={{
+              padding: "20px",
+              maxWidth: "1400px",
+              margin: "0 auto",
+              marginLeft: "300px",
+            }}
+          >
+            <button
+              onClick={() => router.push("/applications")}
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                background: "transparent",
+                border: "none",
+                fontSize: "24px",
+                cursor: "pointer",
+              }}
+              aria-label="Close"
+            >
+              ❌
+            </button>
+          </div> */}
 
-          <input
+          {/* Job Title and Pay */}
+          <div style={{ position: "relative" }}>
+            <input
+              type="text"
+              value={editableFields.job_title || ""}
+              onChange={(e) => handleFieldChange("job_title", e.target.value)}
+              onBlur={() => saveField("job_title")}
+              style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "48px", width: "50%" }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                right: "50px", // Distance from the right edge of the screen
+                top: "35px",
+              }}
+            >
+              <label style={{ fontSize: "18px", marginRight: "10px" }}>Pay:</label>
+              <input
+                type="text"
+                value={editableFields.pay || ""}
+                onChange={(e) => handleFieldChange("pay", e.target.value)}
+                onBlur={() => saveField("pay")}
+                style={{
+                  padding: "5px",
+                  border: "0px solid #ccc",
+                  borderRadius: "4px",
+                  fontSize: "18px",
+                  width: "200px",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* <input
             type="text"
             value={editableFields.job_title || ""}
             onChange={(e) => handleFieldChange("job_title", e.target.value)}
@@ -93,11 +151,50 @@ const ApplicationDetails = () => {
             onChange={(e) => handleFieldChange("pay", e.target.value)}
             onBlur={() => saveField("pay")}
             style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", width: "fit-content", fontSize: "18px" }}
-          />
+          /> */}
         </div>
 
         <div style={{ display: "flex", alignItems: "center" }}>
-          <input
+
+          {/* Company Name, Location, and Rank */}
+          <div style={{ position: "relative" }}>
+            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+              <input
+                type="text"
+                value={editableFields.company_name || ""}
+                onChange={(e) => handleFieldChange("company_name", e.target.value)}
+                onBlur={() => saveField("company_name")}
+                style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "18px", width: "fit-content" }}
+              />
+              <span>-</span>
+              <input
+                type="text"
+                value={editableFields.location || ""}
+                onChange={(e) => handleFieldChange("location", e.target.value)}
+                onBlur={() => saveField("location")}
+                style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "18px", width: "fit-content" }}
+              />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                right: "-758.8px", // Distance from the right edge of the screen
+                top: "-10px",
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <label style={{ fontSize: "18px", marginRight: "10px" }}>Rank:</label>
+                <Rating
+                  value={editableFields.job_rank || 0}
+                  onChange={(e) => handleFieldChange("job_rank", e.toString())}
+                  onBlur={() => saveField("job_rank")}
+                  style={{ fontSize: "18px" }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* <input
             type="text"
             value={editableFields.company_name || "" }
             onChange={(e) => handleFieldChange("company_name", e.target.value)}
@@ -124,7 +221,7 @@ const ApplicationDetails = () => {
               width: '80px',  // You can customize the width
               fontSize: '16px',
             }}
-          />
+          /> */}
         </div>
 
         {/* Progress Bar */}
