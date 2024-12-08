@@ -62,8 +62,8 @@ const ApplicationDetails = () => {
 
   return (
     <div>
-      <Header />
       <Sidebar />
+      <Header />
 
       <div
         style={{
@@ -75,36 +75,33 @@ const ApplicationDetails = () => {
         }}
       >
 
-        {/* Individual input fields */}
-        <div>
-{/*           
-          <div
+        <div
+          style={{
+            position: "absolute",
+            top: "110px",
+            right: "10px",
+          }}
+        >
+          <Button
+            color="transparent"
+            onClick={() => router.push("/applications")}
             style={{
-              padding: "20px",
-              maxWidth: "1400px",
-              margin: "0 auto",
-              marginLeft: "300px",
+              padding: "10", // Remove padding to avoid extra space
+              fontSize: "0", // Remove inherited font size
+              borderRadius: "0", // No rounded edges
+              background: "none", // Remove any default background
+              border: "none", // Remove the border
+              lineHeight: "0", // Prevent vertical alignment issues
             }}
           >
-            <button
-              onClick={() => router.push("/applications")}
-              style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-                background: "transparent",
-                border: "none",
-                fontSize: "24px",
-                cursor: "pointer",
-              }}
-              aria-label="Close"
-            >
-              ❌
-            </button>
-          </div> */}
+            <img src="/images/exit.png" alt="exit" width="24" height="24"/>
+          </Button>
+        </div>
 
+        {/* Individual input fields */}
+        <div>
           {/* Job Title and Pay */}
-          <div style={{ position: "relative" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <input
               type="text"
               value={editableFields.job_title || ""}
@@ -112,13 +109,7 @@ const ApplicationDetails = () => {
               onBlur={() => saveField("job_title")}
               style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "48px", width: "50%" }}
             />
-            <div
-              style={{
-                position: "absolute",
-                right: "50px", // Distance from the right edge of the screen
-                top: "35px",
-              }}
-            >
+          <div style={{ display: "flex", alignItems: "center" }}>
               <label style={{ fontSize: "18px", marginRight: "10px" }}>Pay:</label>
               <input
                 type="text"
@@ -135,93 +126,38 @@ const ApplicationDetails = () => {
               />
             </div>
           </div>
-
-          {/* <input
-            type="text"
-            value={editableFields.job_title || ""}
-            onChange={(e) => handleFieldChange("job_title", e.target.value)}
-            onBlur={() => saveField("job_title")}
-            style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", width: "50%", fontSize: "48px" }}
-          />
-
-          <label>PAY:</label>
-          <input
-            type="text"
-            value={editableFields.pay || ""}
-            onChange={(e) => handleFieldChange("pay", e.target.value)}
-            onBlur={() => saveField("pay")}
-            style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", width: "fit-content", fontSize: "18px" }}
-          /> */}
         </div>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
+
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 
           {/* Company Name, Location, and Rank */}
-          <div style={{ position: "relative" }}>
-            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-              <input
-                type="text"
-                value={editableFields.company_name || ""}
-                onChange={(e) => handleFieldChange("company_name", e.target.value)}
-                onBlur={() => saveField("company_name")}
-                style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "18px", width: "fit-content" }}
-              />
-              <span>-</span>
-              <input
-                type="text"
-                value={editableFields.location || ""}
-                onChange={(e) => handleFieldChange("location", e.target.value)}
-                onBlur={() => saveField("location")}
-                style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "18px", width: "fit-content" }}
-              />
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                right: "-758.8px", // Distance from the right edge of the screen
-                top: "-10px",
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <label style={{ fontSize: "18px", marginRight: "10px" }}>Rank:</label>
-                <Rating
-                  value={editableFields.job_rank || 0}
-                  onChange={(e) => handleFieldChange("job_rank", e.toString())}
-                  onBlur={() => saveField("job_rank")}
-                  style={{ fontSize: "18px" }}
-                />
-              </div>
-            </div>
+          <div style={{ flex: "1", marginRight: "10px" }}>
+            <input
+              type="text"
+              value={editableFields.company_name || ""}
+              onChange={(e) => handleFieldChange("company_name", e.target.value)}
+              onBlur={() => saveField("company_name")}
+              style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "18px", width: "fit-content" }}
+            />
+            <span>-</span>
+            <input
+              type="text"
+              value={editableFields.location || ""}
+              onChange={(e) => handleFieldChange("location", e.target.value)}
+              onBlur={() => saveField("location")}
+              style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "18px", width: "fit-content" }}
+            />
           </div>
-
-          {/* <input
-            type="text"
-            value={editableFields.company_name || "" }
-            onChange={(e) => handleFieldChange("company_name", e.target.value)}
-            onBlur={() => saveField("company_name")}
-            style={{ display: "inline-block", padding: "5px", border: "0px solid #ccc", borderRadius: "4px", width: "fit-content", fontSize: "18px" }}
-          />
-           - 
-          <input
-            type="text"
-            value={editableFields.location || ""}
-            onChange={(e) => handleFieldChange("location", e.target.value)}
-            onBlur={() => saveField("location")}
-            style={{ display: "inline-block", padding: "5px", border: "0px solid #ccc", borderRadius: "4px", width: "fit-content", fontSize: "18px" }}
-          />
-          
-          <label>RANK:</label>
-          <Rating
-            value={editableFields.job_rank || 0}
-            // onChange={setJobRank}
-            onChange={(e) => handleFieldChange("job_rank", e.toString())}
-            onBlur={() => saveField("job_rank")}
-            style={{
-              display: "inline-flex",
-              width: '80px',  // You can customize the width
-              fontSize: '16px',
-            }}
-          /> */}
+          <div style={{ display: "flex", alignItems: "center", minWidth: "240px" }}>
+            <label style={{ fontSize: "18px", marginRight: "10px" }}>Rank:</label>
+            <Rating
+              value={editableFields.job_rank || 0}
+              onChange={(e) => handleFieldChange("job_rank", e.toString())}
+              onBlur={() => saveField("job_rank")}
+              style={{ fontSize: "18px" }}
+            />
+          </div>
         </div>
 
         {/* Progress Bar */}
@@ -244,15 +180,15 @@ const ApplicationDetails = () => {
         </div>
 
         
-        <div style={{ display: "flex", gap: "20px" }}>
-          <div style={{ marginBottom: "15px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", marginBottom: "5px" }}>
+          <div style={{ flex: "1", minWidth: "50%" }}>
             <label style={{ display: "block", marginBottom: "5px" }}>Notes:</label>
             <textarea
               value={editableFields.job_notes || ""}
               onChange={(e) => handleFieldChange("job_notes", e.target.value)}
               onBlur={() => saveField("job_notes")}
               style={{
-                width: "820px",
+                width: "100%",
                 height: "220px",  
                 minHeight: "100px",
                 padding: "5px",
@@ -262,14 +198,14 @@ const ApplicationDetails = () => {
             />
           </div>
 
-          <div style={{ marginBottom: "10px" }}>
+          <div style={{ flex: "1" }}>
             <label style={{ display: "block", marginBottom: "5px" }}>Pros:</label>
             <textarea
               value={editableFields.job_pros || ""}
               onChange={(e) => handleFieldChange("job_pros", e.target.value)}
               onBlur={() => saveField("job_pros")}
               style={{
-                width: "250px",
+                width: "100%",
                 height: "220px",
                 padding: "5px",
                 resize: "none",
@@ -278,14 +214,14 @@ const ApplicationDetails = () => {
             />
           </div>
 
-          <div style={{ marginBottom: "10px" }}>
+          <div style={{ flex: "1" }}>
             <label style={{ display: "block", marginBottom: "5px" }}>Cons:</label>
             <textarea
               value={editableFields.job_cons || ""}
               onChange={(e) => handleFieldChange("job_cons", e.target.value)}
               onBlur={() => saveField("job_cons")}
               style={{
-                width: "250px",
+                width: "100%",
                 height: "220px",
                 padding: "5px",
                 resize: "none",
@@ -294,15 +230,25 @@ const ApplicationDetails = () => {
             />
           </div>
         </div>
-
-        <Button 
-          color="red" 
-          onClick={() => handleFieldChange("job_status", "Rejected")}
-          onBlur={() => saveField("job_status")}
-          style={{padding: '0px 24px', fontSize: '16px', top:'-20px', left:'1245px', marginTop: "20px" }}
-        >
-          Rejection
-        </Button>
+        
+        <div style={{ position: "relative", height: "0" }}> 
+          <Button
+            color="red"
+            onClick={() => handleFieldChange("job_status", "Rejected")}
+            onBlur={async () => {
+              await saveField("job_status");
+              window.location.reload(); // Forces a reload of the current page
+            }}
+            style={{
+              position: "absolute", // Absolute positioning relative to its container
+              right: "0", // Align it to the right side of the container
+              padding: "8px 24px",
+              fontSize: "16px",
+            }}
+          >
+            Rejection
+          </Button>
+        </div>
 
       </div>
     </div>

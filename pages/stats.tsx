@@ -6,8 +6,8 @@ import StatsHeader  from '../components/statsHeader'; // Import the new componen
 export default function statsPage() {
     return (
       <div>
-        <Header />
         <Sidebar />
+        <Header />
         <StatsHeader />
         <div style={{ position: 'relative', height: '300px' }}>
           <Group

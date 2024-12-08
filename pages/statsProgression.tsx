@@ -7,10 +7,10 @@ import SankeyDiagram from '../components/SankeyDiagram';
 export default function statsPage() {
     return (
       <div>
-        <Header />
         <Sidebar />
+        <Header />
         <StatsHeader />
-        <div style={{paddingLeft: '410px', paddingTop: '50px', position: 'relative', height: '400px'}}>
+        <div style={{left: '300px', padding: '50px', position: 'relative', height: '400px', alignItems: 'center'}}>
           <SankeyDiagram />
         </div>
       </div>

@@ -55,6 +55,7 @@ import {
       <div>
         <div>
           {/* Full-width Header */}
+          <Sidebar />
           <Header />
           <StatsHeader />
     
@@ -114,9 +115,6 @@ import {
           </div>
         </div>
           
-        <div style={{position:"absolute", top:"100px", left:"0", bottom:"0", width: "250px"}}>
-          <Sidebar />
-        </div>
       </div>
     );
   }
