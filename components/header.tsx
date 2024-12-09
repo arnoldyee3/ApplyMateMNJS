@@ -1,6 +1,6 @@
 import { Text } from '@mantine/core';
 import { useRouter } from 'next/router';
-import Sidebar from './sidebar';
+import Sidebar from './side';
 
 export default function Header() {
   const router = useRouter();

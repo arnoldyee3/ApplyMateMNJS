@@ -16,7 +16,7 @@ import '@mantine/dates/styles.css';
 import { IconStar, IconPlus, IconFilter, IconEdit } from "@tabler/icons-react";
 import { SetStateAction, useState } from "react";
 import Header from "../components/header";
-import Sidebar from "../components/sidebar";
+import Sidebar from "../components/side";
 
 export default function ApplicationsPage() {
   const [selectedCount, setSelectedCount] = useState(0);

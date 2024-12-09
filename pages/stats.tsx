@@ -1,6 +1,6 @@
 import { Group, Box, Flex, Text } from "@mantine/core";
 import Header from '../components/header';
-import Sidebar from '../components/sidebar';
+import Sidebar from '../components/side';
 import StatsHeader  from '../components/statsHeader'; // Import the new component
 
 export default function statsPage() {
