@@ -10,7 +10,7 @@ export default function StatsHeader() {
         backgroundColor: '#f5f5f5',
         padding: '10px',
         borderBottom: '1px solid #ccc',
-        marginLeft: '300px', // Reserve space for the sidebar (adjust to match your sidebar width)
+        marginLeft: '200px', // Reserve space for the sidebar (adjust to match your sidebar width)
       }}
     >
       <Flex justify="space-between" align="center">

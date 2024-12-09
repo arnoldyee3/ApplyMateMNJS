@@ -16,7 +16,7 @@ import {
   import { IconStar, IconPlus, IconTrash } from "@tabler/icons-react";
   import { useState, useEffect } from "react";
   import Header from "../components/header";
-  import Sidebar from "../components/sidebar";
+  import Sidebar from "../components/side";
   import axios from "axios"; // Make sure axios is installed for API calls
   
   // Interface for the Application type
@@ -260,11 +260,11 @@ import {
         {/* Main Content Area */}
         <div style={{ flex: 1, borderLeft: "1px solid #ddd" }}>
           {/* Topbar */}
-          <Sidebar />
           <Header />
+          <Sidebar />
   
           {/* Selection and Filters */}
-          <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginTop: "20px", marginLeft: "300px" }}>
+          <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginLeft: "200px" }}>
             <Group position="apart" mb="md" style={{ display: "flex", justifyContent: "space-between" }}>
               {/* Left Section */}
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>

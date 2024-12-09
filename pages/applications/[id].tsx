@@ -2,7 +2,7 @@ import { Textarea, Rating, Button } from "@mantine/core"
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Header from "../../components/header";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../../components/side";
 import ApplicationProgressBar from "../../components/progressbar";
 
 const ApplicationDetails = () => {
@@ -62,16 +62,16 @@ const ApplicationDetails = () => {
 
   return (
     <div>
-      <Sidebar />
       <Header />
+      <Sidebar />
 
       <div
         style={{
           padding: "20px",
           maxWidth: "1400px",
           margin: "0 auto",
-          marginTop: "px",
-          marginLeft: "300px",
+          marginTop: "0px",
+          marginLeft: "200px",
         }}
       >
 
@@ -140,7 +140,7 @@ const ApplicationDetails = () => {
               onBlur={() => saveField("company_name")}
               style={{ padding: "5px", border: "0px solid #ccc", borderRadius: "4px", fontSize: "18px", width: "fit-content" }}
             />
-            <span>-</span>
+            <span></span>
             <input
               type="text"
               value={editableFields.location || ""}

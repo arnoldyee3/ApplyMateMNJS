@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts';
 import { Select } from '@mantine/core'; // Import a dropdown from Mantine
 import Header from '../components/header';
-import Sidebar from '../components/sidebar';
+import Sidebar from '../components/side';
 import StatsHeader from '../components/statsHeader';
 
 export default function StatsPage() {
@@ -44,8 +44,8 @@ export default function StatsPage() {
 
   return (
     <div>
-      <Sidebar />
       <Header />
+      <Sidebar />
       <StatsHeader />
       <div style={{left: '300px', margin: '50px auto', maxWidth: '600px', textAlign: 'center' }}>
         <h2>Applications Filtered by {selectedFilter}</h2>

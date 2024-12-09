@@ -10,34 +10,15 @@ export default function Sidebar() {
         width: '200px',
         height: '100vh',
         position: 'fixed',
-        backgroundColor: '#f8f8fa',
+        backgroundColor: '#f8f9fa',
+        padding: '0px',
         boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)'
       }}
     >
-      <div
-          onClick={() => router.push('/')}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '48px',
-            fontWeight: 600,
-            paddingTop: '10px',
-            paddingLeft: '20px',
-            paddingRight: '20px',
-            paddingBottom: '10px',
-            borderBottom: '2px solid #e0e0e0',  // Border at the 300px mark (right of the logo)
-            flex: '0 0 280px',  // Ensures the logo stays within the left area
-            cursor: 'pointer',
-            width: "300px",
-          }}
-        >
-          {/* Replace the text with the logo image */}
-          <img src="/images/logo.png" alt="ApplyMate Logo" width="267.2" height="80" style={{ marginRight: '16.4px' }} />
-      </div>
       {/* Applications Button */}
       <NavLink
         label={
-          <div style={{ display: 'flex', alignItems: 'center', fontSize: '24px', padding: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px' }}>
             <img src="/images/applications-icon.png" alt="Job Applications"width="48" height="48"  style={{ marginRight: '10px' }} />
             Job Applications
           </div>
@@ -49,19 +30,19 @@ export default function Sidebar() {
       {/* Statistics Button */}
       <NavLink
         label={
-          <div style={{ display: 'flex', alignItems: 'center', fontSize: '24px', padding: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px' }}>
             <img src="/images/statistics-icon.png" alt="Statistics" width="48" height="48" style={{ marginRight: '10px' }}  />
             Statistics
           </div>
         }
-        onClick={() => router.push('/statsApplications')}
-        style={{ marginBottom: '50px' }}
+        onClick={() => router.push('/stats')}
+        style={{ marginBottom: '20px' }}
       />
 
       {/* Journaling Button */}
       <NavLink
         label={
-          <div style={{ display: 'flex', alignItems: 'center', fontSize: '24px', padding: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px' }}>
             <img src="/images/journaling-icon.png" alt="Journaling" width="48" height="48" style={{ marginRight: '10px' }} />
             Journaling
           </div>

@@ -10,7 +10,7 @@ import {
   import { Bar } from "react-chartjs-2";
   import { Box, Flex, Text, Progress, Select } from "@mantine/core";
   import Header from "../components/header";
-  import Sidebar from "../components/sidebar";
+  import Sidebar from "../components/side";
   import StatsHeader from "../components/statsHeader";
   
   // Register Chart.js components
@@ -55,13 +55,13 @@ import {
       <div>
         <div>
           {/* Full-width Header */}
-          <Sidebar />
           <Header />
+          <Sidebar />
           <StatsHeader />
     
           {/* Main layout: Sidebar and Content */}
 
-          <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginTop: "20px", marginLeft: "300px" }}>
+          <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginTop: "0px", marginLeft: "200px" }}>
             {/* Padded Main Content */}
             <div style={{ flex: 1, padding: "20px" }}>
               {/* Lifetime Applications Section */}
