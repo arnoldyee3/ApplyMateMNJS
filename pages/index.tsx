@@ -12,7 +12,7 @@ export default function IndexPage() {
       <Group mt={50} justify="center">
         <Button size="xl" onClick={() => router.push('/applications')}>Job Applications</Button>
         <Button size="xl" onClick={() => router.push('/journaling')}>Journaling</Button>
-        <Button size="xl" onClick={() => router.push('/stats')}>Statistics </Button>
+        <Button size="xl" onClick={() => router.push('/statsApplications')}>Statistics </Button>
       </Group>
     </div>
   );

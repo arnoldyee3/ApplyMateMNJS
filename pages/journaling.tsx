@@ -251,4 +251,8 @@ export default function ApplicationsPage() {
       </Modal>
     </div>
   );
+      </Modal>
+    </div>
+  );
 }
+
