@@ -45,7 +45,20 @@ export default function Header() {
       >
         {/* Left side - ApplyMate Text */}
 
-        <img src="/images/logo.png" width="167" height="50" style={{ marginRight: '60px' }}  />
+        <div
+          onClick={() => router.push('/')}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: '48px',
+            fontWeight: 600,
+            borderRight: '2px solid #e0e0e0',  // Border at the 300px mark (right of the logo)
+            flex: '0 0 180px',  // Ensures the logo stays within the left area
+            cursor: 'pointer',
+          }}
+        >
+          <img src="/images/logo.png" width="167" height="50" style={{ marginRight: '23px' }}  />
+        </div>
 
         {/* Right side - Page Name Text */}
         <div
