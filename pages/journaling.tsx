@@ -102,8 +102,8 @@ export default function ApplicationsPage() {
       {/* Main Content Area */}
       <div style={{ flex: 1, borderLeft: "1px solid #ddd" }}>
         {/* Topbar */}
-        <Header />
         <Sidebar />
+        <Header />
 
         {/* Job Applications Section */}
         <div

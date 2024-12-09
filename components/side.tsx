@@ -15,6 +15,17 @@ export default function Sidebar() {
         boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)'
       }}
     >
+      {/* Logo Button */}
+      <NavLink
+        label={
+          <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px', borderBottom:'2px solid #e0e0e0' }}>
+            <img src="/images/logo.png" alt="Job Applications"width="167" height="50"  style={{ marginRight: '10px' }} />
+          </div>
+        }
+        onClick={() => router.push('/')}
+        style={{ marginBottom: '0px', marginTop: '0px' }}
+      />
+
       {/* Applications Button */}
       <NavLink
         label={

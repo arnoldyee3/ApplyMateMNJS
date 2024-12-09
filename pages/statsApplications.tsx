@@ -55,8 +55,8 @@ import {
       <div>
         <div>
           {/* Full-width Header */}
-          <Header />
           <Sidebar />
+          <Header />
           <StatsHeader />
     
           {/* Main layout: Sidebar and Content */}

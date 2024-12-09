@@ -7,8 +7,8 @@ export default function statsPage() {
   return (
     <div>
       <div style={{ flex: 1, borderLeft: "1px solid #ddd" }}>
-        <Header />
         <Sidebar />
+        <Header />
         <StatsHeader />
         <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginLeft: "200px" }}>
           <h2>Select a tab to start</h2>

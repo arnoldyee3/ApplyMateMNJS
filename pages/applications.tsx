@@ -260,8 +260,8 @@ import {
         {/* Main Content Area */}
         <div style={{ flex: 1, borderLeft: "1px solid #ddd" }}>
           {/* Topbar */}
-          <Header />
           <Sidebar />
+          <Header />
   
           {/* Selection and Filters */}
           <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginLeft: "200px" }}>
