@@ -174,8 +174,27 @@ import {
       setModalOpen(true);
     };
   
+    const [validationErrors, setValidationErrors] = useState({
+      jobTitle: false,
+      companyName: false,
+      jobStatus: false,
+    });
+
     // Handle saving a job (add or edit)
     const handleSaveJob = async () => {
+      const errors = {
+        jobTitle: jobTitle === "",
+        companyName: companyName === "",
+        jobStatus: jobStatus === null,
+      };
+    
+      setValidationErrors(errors);
+    
+      // If any field has an error, prevent saving
+      if (Object.values(errors).includes(true)) {
+        return;
+      }
+
       try {
         const payload = {
           job_title: jobTitle,
@@ -223,6 +242,15 @@ import {
       }
     };
     
+    // Handling the reset of error styles on field interaction
+    const handleFieldFocus = (fieldName) => {
+      setValidationErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: false,
+      }));
+    };
+
+
     // Handle deleting selected job applications
     const handleDeleteSelectedJobs = async () => {
       try {
@@ -276,6 +304,7 @@ import {
                   style={{
                     display: "flex",
                     alignItems: "center",
+                    backgroundColor: selectedCount > 0 ? "red" : ""
                   }}
                 >
                   <IconTrash size={16} style={{ marginRight: "8px" }} />
@@ -434,6 +463,8 @@ import {
                 <TextInput
                   value={jobTitle}
                   onChange={(e) => setJobTitle(e.target.value)}
+                  error={validationErrors.jobTitle && "Required Field"}
+                  onFocus={() => handleFieldFocus("jobTitle")}
                   style={{
                     width: '84.7%',  // You can customize the width
                     fontSize: '16px',
@@ -447,6 +478,8 @@ import {
                 <TextInput
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
+                  error={validationErrors.companyName && "Required Field"}
+                  onFocus={() => handleFieldFocus("companyName")}
                   style={{
                     width: '74%',  // You can customize the width
                     fontSize: '16px',
@@ -464,7 +497,6 @@ import {
                     width: '100%',  // You can customize the width
                     fontSize: '16px',
                   }}
-                  required
                 />
               </div>
               
@@ -477,7 +509,6 @@ import {
                     width: '100%',  // You can customize the width
                     fontSize: '16px',
                   }}
-                  required
                 />
               </div>
   
@@ -487,12 +518,14 @@ import {
                   data={["Not Applied", "Applied", "Interviewing", "Offered", "Accepted", "Rejected"]}
                   value={jobStatus}
                   onChange={setJobStatus}
-                  required
+                  error={validationErrors.jobStatus && "Required Field"}
+                  onFocus={() => handleFieldFocus("jobStatus")}
                   style={{
                     position:"center",
                     width: '82%',  // You can customize the width
                     fontSize: '16px',
                   }}
+                  required
                 />
               </div>
   

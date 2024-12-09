@@ -107,7 +107,7 @@ import {
               {/* Bar Chart */}
               <Box style={{ height: "300px" }}>
                 <Text weight={700} size="lg">Weekly Applications</Text>
-                <div style={{ marginTop: "20px", height: "250px" }}>
+                <div style={{ marginTop: "20px", height: "100%" }}>
                   <Bar data={barData} options={barOptions} />
                 </div>
               </Box>

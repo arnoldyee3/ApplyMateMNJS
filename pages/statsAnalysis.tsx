@@ -48,7 +48,7 @@ export default function StatsPage() {
       <Header />
       <StatsHeader />
       <div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", marginLeft: "200px" }}>
-        <h2>Applications Filtered by {selectedFilter}</h2>
+        <h2 style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Applications Filtered by {selectedFilter}</h2>
         {/* Dropdown to select filter */}
         <div style={{ marginBottom: '20px' }}>
           <Select

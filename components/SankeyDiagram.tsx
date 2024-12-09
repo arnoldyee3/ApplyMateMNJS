@@ -30,17 +30,22 @@ const SankeyDiagram = () => {
       ],
     };
 
-    const width = 1200;
-    const height = 600;
+    const svg = d3.select(svgRef.current);
 
-    const svg = d3.select(svgRef.current)
-      .attr('width', width)
-      .attr('height', height);
+    // Access the parent container's dimensions
+    const container = svg.node().parentNode;
+    const width = container.clientWidth;
+    const height = container.clientHeight;
 
     const { nodes, links } = sankey()
       .nodeWidth(15)
       .nodePadding(10)
       .extent([[1, 1], [width - 1, height - 5]])(data);
+
+    svg.attr('width', '100%')
+      .attr('height', '100%')
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('preserveAspectRatio', 'xMidYMid');
 
     svg.append('g')
       .selectAll('rect')
@@ -62,7 +67,7 @@ const SankeyDiagram = () => {
           'No Response': '#7f7f7f',
           'No Further Action': '#bcbd22',
         };
-        return colorMap[d.name] || '#ccc'; 
+        return colorMap[d.name] || '#ccc';
       });
 
     svg.append('g')
