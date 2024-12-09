@@ -264,7 +264,7 @@ import {
           <Header />
   
           {/* Selection and Filters */}
-          <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginLeft: "200px" }}>
+          <div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", marginLeft: "200px" }}>
             <Group position="apart" mb="md" style={{ display: "flex", justifyContent: "space-between" }}>
               {/* Left Section */}
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -309,7 +309,7 @@ import {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "5% 18% 15% 12% 15% 15% 10% 10%",
+                gridTemplateColumns: "5% 18% 15% 12% 15% 11% 13% 10%",
                 padding: "10px 0",
                 backgroundColor: "#f5f5f5",
                 borderBottom: "1px solid #ddd",
@@ -354,7 +354,7 @@ import {
                     style={{
                       marginBottom: "10px",
                       display: "grid",
-                      gridTemplateColumns: "3.5% 18.75% 15.25% 12.5% 15.5% 15% 9.5% 10%",
+                      gridTemplateColumns: "3.5% 18.75% 15.25% 12.5% 15.5% 11% 12.25% 10%",
                       alignItems: "center",
                       cursor: "pointer",
                     }}
@@ -424,64 +424,64 @@ import {
               Add New Job
             </div>
           } 
-          size = "70vw"
+          size = "78%"
         >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
             
             <div style={{flex: 1, marginRight:'20px'}}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <label style={{ marginRight: '10px' }}>Job Title <span style={{ color: 'red' }}>*</span></label>
                 <TextInput
                   value={jobTitle}
                   onChange={(e) => setJobTitle(e.target.value)}
                   style={{
-                    width: '455px',  // You can customize the width
+                    width: '84.7%',  // You can customize the width
                     fontSize: '16px',
                   }}
                   required
                 />
               </div>
   
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <label style={{ marginRight: '10px' }}>Company Name <span style={{ color: 'red' }}>*</span></label>
                 <TextInput
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
                   style={{
-                    width: '400px',  // You can customize the width
+                    width: '74%',  // You can customize the width
                     fontSize: '16px',
                   }}
                   required
                 />
               </div>
               
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <label style={{ marginRight: '10px' }}>Pay </label>
                 <TextInput
                   value={pay}
                   onChange={(e) => setPay(e.target.value)}
                   style={{
-                    width: '500px',  // You can customize the width
+                    width: '100%',  // You can customize the width
                     fontSize: '16px',
                   }}
                   required
                 />
               </div>
               
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <label style={{ marginRight: '10px' }}>Location</label>
                 <TextInput
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   style={{
-                    width: '465px',  // You can customize the width
+                    width: '100%',  // You can customize the width
                     fontSize: '16px',
                   }}
                   required
                 />
               </div>
   
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <label style={{ marginRight: '10px' }}>Job Status <span style={{ color: 'red' }}>*</span></label>
                 <Select
                   data={["Not Applied", "Applied", "Interviewing", "Offered", "Accepted", "Rejected"]}
@@ -490,32 +490,32 @@ import {
                   required
                   style={{
                     position:"center",
-                    width: '442px',  // You can customize the width
+                    width: '82%',  // You can customize the width
                     fontSize: '16px',
                   }}
                 />
               </div>
   
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <label style={{ marginRight: '10px' }}>Deadline</label>
                 <DateInput
                   placeholder="Enter deadline"
                   value={jobDeadline}
                   onChange={setJobDeadline}
                   style={{
-                    width: '463px',  // You can customize the width
+                    width: '100%',  // You can customize the width
                     fontSize: '16px',
                   }}
                 />
               </div>
   
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                   <label style={{ marginRight: '10px' }}>Rank</label>
                   <Rating
                     value={jobRank || 1}
                     onChange={setJobRank}
                     style={{
-                      width: '80px',  // You can customize the width
+                      width: '80pxf',  // You can customize the width
                       fontSize: '16px',
                     }}
                   />
@@ -526,68 +526,72 @@ import {
                 <Textarea
                   value={jobNotes}
                   onChange={(e) => setJobNotes(e.target.value)}
-                  rows='12'
+                  rows='10'
                   style={{
-                    width: '520px',
+                    width: '100%',
                     fontSize: '16px',
                   }}
                 />
               </div>
             </div>
               
-            <div style={{width:'600px', marginTop:'-20px'}}>
-              <div style={{ display: 'absolute', top:'0px', right:'0px', margin: '15px', }}>
+            <div style={{width:'600px', height: '630px', marginTop:'-20px'}}>
+              <div style={{ display: 'absolute', top:'0px', right:'0px', marginTop: '15px', marginBottom: '18px'}}>
                 <label style={{ marginRight: '10px' }}>Job Description</label>
                 <Textarea
                   value={jobDesc}
                   onChange={(e) => setJobDesc(e.target.value)}
                   rows='12'
                   style={{
-                    width: '550px',
+                    width: '100%',
                     fontSize: '16px',
                   }}
                 />
               </div>
             
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop:'37.5px' }}>
-                <div style={{flex: 1, marginRight:'20px'}}>
-                  <div style={{ display: 'absolute', top:'0px', right:'0px', margin: '15px', }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                <div style={{flex: 1, marginRight:'20px', width: '50%'}}>
+                  <div style={{ display: 'absolute', top:'0px', right:'0px' }}>
                     <label style={{ marginRight: '10px' }}>Pros</label>
                     <Textarea
                       value={jobPros}
                       onChange={(e) => setJobPros(e.target.value)}
-                      rows='12'
+                      rows='10'
                       style={{
-                        width: '250px',
+                        width: '100%',
                         fontSize: '16px',
                       }}
                     />
                   </div>
                 </div>
                 
-                <div style={{width:'400px'}}>
+                <div style={{width:'50%'}}>
                   
-                  <div style={{ display: 'absolute', top:'0px', right:'0px', margin: '15px', }}>
+                  <div style={{ display: 'absolute', top:'0px', right:'0px' }}>
                     <label style={{ marginRight: '10px' }}>Cons</label>
                     <Textarea
                       value={jobCons}
                       onChange={(e) => setJobCons(e.target.value)}
-                      rows='12'
+                      rows='10'
                       style={{
-                        width: '250px',
+                        width: '100%',
                         fontSize: '16px',
                       }}
                     />
                   </div>
+                </div>
+
+                <div style={{ position: "relative", height: "0" }}>
+                  <Button onClick={handleSaveJob} style={{position: "absolute", bottom: "-300px", right: "0px", padding: "0px 24px", fontSize: "16px" }}>
+                    Save Job
+                  </Button>
                 </div>
               </div>
   
             </div>
           </div>
           
-          <Button onClick={handleSaveJob} style={{padding: '0px 24px', fontSize: '16px', top:'-20px', left:'1015px', marginTop: "20px" }}>
-            Save Job
-          </Button>
+          
         </Modal>
       </div>
     );

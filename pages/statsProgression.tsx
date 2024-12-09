@@ -9,7 +9,7 @@ export default function statsPage() {
         <Sidebar />
         <Header />
         <StatsHeader />
-        <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginLeft: "200px", overflowX: "auto" }}>
+        <div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", marginLeft: "200px", overflowX: "auto" }}>
           <SankeyDiagram />
         </div>
       </div>

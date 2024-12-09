@@ -62,13 +62,13 @@ const ApplicationDetails = () => {
 
   return (
     <div>
-      <Header />
       <Sidebar />
-
+      <Header />
+      
       <div
         style={{
           padding: "20px",
-          maxWidth: "1400px",
+          maxWidth: "100%",
           margin: "0 auto",
           marginTop: "0px",
           marginLeft: "200px",

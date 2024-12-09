@@ -54,7 +54,7 @@ const ApplicationProgressBar: React.FC<ApplicationProgressBarProps> = ({
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "1400px" }}>
+    <div style={{ padding: "20px", maxWidth: "100%" }}>
       <Text align="center" mb="sm">
         Current Status: <b>{currentStatus}</b>
       </Text>

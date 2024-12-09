@@ -61,7 +61,7 @@ import {
     
           {/* Main layout: Sidebar and Content */}
 
-          <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginTop: "0px", marginLeft: "200px" }}>
+          <div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", marginTop: "0px", marginLeft: "200px" }}>
             {/* Padded Main Content */}
             <div style={{ flex: 1, padding: "20px" }}>
               {/* Lifetime Applications Section */}

@@ -47,7 +47,7 @@ export default function StatsPage() {
       <Sidebar />
       <Header />
       <StatsHeader />
-      <div style={{ padding: "20px", maxWidth: "1400px", margin: "0 auto", marginLeft: "200px" }}>
+      <div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", marginLeft: "200px" }}>
         <h2>Applications Filtered by {selectedFilter}</h2>
         {/* Dropdown to select filter */}
         <div style={{ marginBottom: '20px' }}>

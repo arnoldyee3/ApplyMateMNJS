@@ -105,11 +105,10 @@ export default function ApplicationsPage() {
         <Sidebar />
         <Header />
 
-        {/* Job Applications Section */}
         <div
           style={{
             padding: "20px",
-            maxWidth: "1200px",
+            maxWidth: "100%",
             margin: "0 auto",
             marginLeft: "200px", // Adjusted for the sidebar
           }}
