@@ -13,7 +13,7 @@ import {
 } from "@mantine/core";
 import { DateInput } from '@mantine/dates';
 import '@mantine/dates/styles.css';
-import { IconStar, IconPlus, IconFilter, IconEdit, IconTrash } from "@tabler/icons-react";
+import { IconStar, IconPlus, IconFilter, IconEdit, IconTrash, IconSearch } from "@tabler/icons-react";
 import { SetStateAction, useState } from "react";
 import Header from "../components/header";
 import Sidebar from "../components/side";
@@ -51,6 +51,7 @@ export default function ApplicationsPage() {
     file: null;
   } | null>(null);
   const [template, setTemplate] = useState("Blank");
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Predefined questions
   const mindfulnessQuestions = [
@@ -180,6 +181,11 @@ export default function ApplicationsPage() {
     setTemplate("Blank");
   };
 
+  const filteredEntries = entries.filter((entry) =>
+    entry.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    entry.body.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const handleEditEntry = (entry) => {
     setCurrentEntry(entry);
     setModalOpen(true);
@@ -242,6 +248,11 @@ export default function ApplicationsPage() {
 
             {/* Right Section */}
             <div style={{ display: "flex", gap: "10px" }}>
+              <TextInput
+                placeholder="Search entries..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
               <Button
                 radius="md"
                 onClick={handleAddNewEntry}
@@ -276,7 +287,7 @@ export default function ApplicationsPage() {
 
           {/* Applications */}
           <div>
-            {entries.map((app) => (
+            {filteredEntries.map((app) => (
               <Card
                 key={app.id}
                 shadow="sm"
