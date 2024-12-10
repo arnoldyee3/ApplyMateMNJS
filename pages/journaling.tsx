@@ -7,8 +7,6 @@ import {
   Card,
   Modal,
   TextInput,
-  Select,
-  Rating,
   Textarea,
   FileInput,
 } from "@mantine/core";

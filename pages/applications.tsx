@@ -7,7 +7,6 @@ import {
     Card,
     Modal,
     TextInput,
-    NumberInput,
     Select,
     Rating,
     Textarea

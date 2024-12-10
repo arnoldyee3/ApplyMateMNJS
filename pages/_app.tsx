@@ -2,8 +2,6 @@ import "@mantine/core/styles.css";
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "../theme";
-import { useRouter } from "next/router";
-
 
 export default function App({ Component, pageProps }: any) {
   return (
