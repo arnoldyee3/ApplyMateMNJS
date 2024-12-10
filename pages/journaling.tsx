@@ -310,7 +310,7 @@ export default function ApplicationsPage() {
                 <ActionIcon
                   color="blue"
                   onClick={() => handleEditEntry(app)}
-                  title="Edit Job"
+                  title="Edit Journal Entry"
                 >
                 <IconEdit size={16} />
                 </ActionIcon>
