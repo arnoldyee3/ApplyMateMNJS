@@ -7,8 +7,6 @@ import {
   Card,
   Modal,
   TextInput,
-  Select,
-  Rating,
   Textarea,
 } from "@mantine/core";
 import { DateInput } from '@mantine/dates';

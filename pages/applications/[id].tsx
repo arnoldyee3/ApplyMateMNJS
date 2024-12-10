@@ -1,4 +1,4 @@
-import { Textarea, Rating, Button } from "@mantine/core"
+import { Rating, Button } from "@mantine/core"
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Header from "../../components/header";
