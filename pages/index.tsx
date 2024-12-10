@@ -22,13 +22,13 @@ export default function IndexPage() {
           <img src="/images/applications-icon.png" alt="Job Applications" width="48" height="48" style={{ marginRight: '10px' }} />
           Job Applications
         </Button>
-        <Button size="xl" style={buttonStyle} variant= "default" radius="lg" onClick={() => router.push('/journaling')}>
-          <img src="/images/journaling-icon.png" alt="Job Applications" width="48" height="48" style={{ marginRight: '10px' }} />
-          Journaling
-        </Button>
         <Button size="xl" style={buttonStyle} variant= "default" radius="lg" onClick={() => router.push('/statsApplications')}>
-          <img src="/images/statistics-icon.png" alt="Job Applications" width="48" height="48" style={{ marginRight: '10px' }} />
+          <img src="/images/statistics-icon.png" alt="Statistics" width="48" height="48" style={{ marginRight: '10px' }} />
           Statistics 
+        </Button>
+        <Button size="xl" style={buttonStyle} variant= "default" radius="lg" onClick={() => router.push('/journaling')}>
+          <img src="/images/journaling-icon.png" alt="Journaling" width="48" height="48" style={{ marginRight: '10px' }} />
+          Journaling
         </Button>
       </Stack>
     </div>
