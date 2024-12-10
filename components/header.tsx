@@ -8,7 +8,7 @@ export default function Header() {
   const getPageName = () => {
     const path = router.pathname;
 
-    if (path === '/applications') {
+    if (path === '/applications' || path === '/applications/[id]') {
       return 'Job Applications';
     }
     if (path === '/stats') {
