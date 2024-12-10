@@ -1,5 +1,6 @@
-# Mantine Next Template
+# How To Run The Code
 
-Get started with the template by clicking `Use this template` button on the top of the page.
-
-[Documentation](https://mantine.dev/guides/next/)
+Download Node.JS
+Run 'npm install' in the terminal
+Run 'npm run dev' in the terminal
+Click on the localhost:3000 link.
