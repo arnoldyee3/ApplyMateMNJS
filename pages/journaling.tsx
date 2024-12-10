@@ -27,7 +27,7 @@ export default function ApplicationsPage() {
       title: "Thoughts about current progress",
       body: "I'm making good progress on my projects, but I need to work on my time management skills.",
       template: "Blank",
-      file: null,
+      file: null as string | null,
       selected: false,
     },
     {
@@ -47,8 +47,8 @@ export default function ApplicationsPage() {
     dateCreated: string;
     title: string;
     body: string;
-    template: "Blank";
-    file: null;
+    template: string;
+    file: string | null;
   } | null>(null);
   const [template, setTemplate] = useState("Blank");
   const [searchQuery, setSearchQuery] = useState("");
@@ -100,8 +100,10 @@ export default function ApplicationsPage() {
   ];
 
   // Handle template selection
-  const handleTemplateChange = (value) => {
-    setTemplate(value);
+  const handleTemplateChange = (value: string | null) => {
+    if (value) {
+      setTemplate(value);
+    }
     let content = "";
 
     if (value === "Mindfulness") {
@@ -128,7 +130,7 @@ export default function ApplicationsPage() {
       content = selectedQuestions.map((q, index) => `${index + 1}. ${q}`).join("\n");
     }
 
-    setCurrentEntry((prev) => prev ? ({ ...prev, body: content, template: value }) : null);
+    setCurrentEntry((prev) => prev ? ({ ...prev, body: content, template: value as string }) : null);
   };
 
   const handleSelect = (id: number) => {
@@ -152,9 +154,10 @@ export default function ApplicationsPage() {
   };
 
   // Handle file upload
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      const file = files[0];
       setCurrentEntry((prev) => prev ? ({ ...prev, file: file.name }) : null); // Store file name for simplicity
     }
   };
@@ -186,7 +189,7 @@ export default function ApplicationsPage() {
     entry.body.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleEditEntry = (entry) => {
+  const handleEditEntry = (entry: SetStateAction<{ id: number; dateCreated: string; title: string; body: string; template: string; file: string | null; } | null>) => {
     setCurrentEntry(entry);
     setModalOpen(true);
   };

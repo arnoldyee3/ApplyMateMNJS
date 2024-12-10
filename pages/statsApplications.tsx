@@ -66,7 +66,7 @@ import {
             <div style={{ flex: 1, padding: "20px" }}>
               {/* Lifetime Applications Section */}
               <Box style={{ marginBottom: "20px" }}>
-                <Text weight={700} size="lg">Lifetime Applications</Text>
+                <Text fw={700} size="lg">Lifetime Applications</Text>
                 <Flex align="center" style={{ marginTop: "10px" }}>
                   <Box style={{ fontSize: "24px", marginRight: "10px" }}>
                     96 jobs applied to
@@ -79,18 +79,18 @@ import {
     
               {/* Progression Bar */}
               <Box style={{ marginBottom: "20px" }}>
-                <Text weight={700} size="lg">Progression</Text>
+                <Text fw={700} size="lg">Progression</Text>
                 <Progress
                   value={(96 / 100) * 100}
-                  label="96/100"
                   style={{ marginTop: "10px", width: "300px" }}
                 />
+                <Text style={{ marginTop: "5px" }}>96/100</Text>
                 <Text style={{ marginTop: "5px" }}>4 more jobs to go!</Text>
               </Box>
     
               {/* Time Range Selector */}
               <Box style={{ marginBottom: "20px" }}>
-                <Text weight={700} size="lg">Time Range</Text>
+                <Text fw={700} size="lg">Time Range</Text>
                 <Select
                   data={[
                     "Last week",
@@ -106,7 +106,7 @@ import {
     
               {/* Bar Chart */}
               <Box style={{ height: "300px" }}>
-                <Text weight={700} size="lg">Weekly Applications</Text>
+                <Text fw={700} size="lg">Weekly Applications</Text>
                 <div style={{ marginTop: "20px", height: "100%" }}>
                   <Bar data={barData} options={barOptions} />
                 </div>

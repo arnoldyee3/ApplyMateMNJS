@@ -28,7 +28,7 @@ export default function StatsPage() {
             label="Filter By Time Frame"
             placeholder="Select Time Frame"
             value={timeFrame}
-            onChange={setTimeFrame} // Update state on selection
+            onChange={(value) => setTimeFrame(value ?? '1 Week')} // Update state on selection
             data={[
               { value: '1 Week', label: '1 Week' },
               { value: '1 Month', label: '1 Month' },

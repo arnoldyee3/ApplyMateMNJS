@@ -3,20 +3,20 @@ import * as d3 from 'd3';
 import { sankey, sankeyLinkHorizontal } from 'd3-sankey';
 
 const SankeyDiagram = () => {
-  const svgRef = useRef();
+  const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     const data = {
       nodes: [
-        { name: 'Jobs Applied' },
-        { name: 'Replies' },
-        { name: 'Interview' },
-        { name: 'Offer Accepted' },
-        { name: 'Offer Turned Down' },
-        { name: 'Not Offered' },
-        { name: 'Rejected' },
-        { name: 'No Response' },
-        { name: 'No Further Action' },
+        { name: 'Jobs Applied', index: 0 },
+        { name: 'Replies', index: 1 },
+        { name: 'Interview', index: 2 },
+        { name: 'Offer Accepted', index: 3 },
+        { name: 'Offer Turned Down', index: 4 },
+        { name: 'Not Offered', index: 5 },
+        { name: 'Rejected', index: 6 },
+        { name: 'No Response', index: 7 },
+        { name: 'No Further Action', index: 8 },
       ],
       links: [
         { source: 0, target: 1, value: 15 },
@@ -30,10 +30,11 @@ const SankeyDiagram = () => {
       ],
     };
 
+    if (!svgRef.current) return;
     const svg = d3.select(svgRef.current);
 
     // Access the parent container's dimensions
-    const container = svg.node().parentNode;
+    const container = (svg.node() as Element).parentNode as HTMLElement;
     const width = container.clientWidth;
     const height = container.clientHeight;
 
@@ -51,12 +52,12 @@ const SankeyDiagram = () => {
       .selectAll('rect')
       .data(nodes)
       .join('rect')
-      .attr('x', d => d.x0)
-      .attr('y', d => d.y0)
-      .attr('height', d => d.y1 - d.y0)
-      .attr('width', d => d.x1 - d.x0)
+      .attr('x', d => d.x0?? 0)
+      .attr('y', d => d.y0?? 0)
+      .attr('height', d => (d.y1 ?? 0) - (d.y0 ?? 0))
+      .attr('width', d => (d.x1 ?? 0) - (d.x0 ?? 0))
       .attr('fill', d => {
-        const colorMap = {
+        const colorMap: { [key: string]: string } = {
           'Jobs Applied': '#1f77b4',
           'Replies': '#ff7f0e',
           'Interview': '#2ca02c',
@@ -67,7 +68,7 @@ const SankeyDiagram = () => {
           'No Response': '#7f7f7f',
           'No Further Action': '#bcbd22',
         };
-        return colorMap[d.name] || '#ccc';
+        return colorMap[(d as any).name] || '#ccc';
       });
 
     svg.append('g')
@@ -77,20 +78,20 @@ const SankeyDiagram = () => {
       .attr('d', sankeyLinkHorizontal())
       .attr('stroke', '#aaa')
       .attr('fill', 'none')
-      .attr('stroke-width', d => Math.max(1, d.width));
+      .attr('stroke-width', d => Math.max(1, d.width ?? 1));
 
     svg.append('g')
       .selectAll('text')
       .data(nodes)
       .join('text')
-      .attr('x', d => d.x0 - 6)
-      .attr('y', d => (d.y1 + d.y0) / 2)
+      .attr('x', d => (d.x0 ?? 0) - 6)
+      .attr('y', d => ((d.y1 ?? 0) + (d.y0 ?? 0)) / 2)
       .attr('dy', '0.35em')
       .attr('text-anchor', 'end')
-      .text(d => d.name)
+      .text(d => (d as any).name)
       .attr('fill', '#000')
-      .filter(d => d.x0 < width / 2)
-      .attr('x', d => d.x1 + 6)
+      .filter(d => (d.x0 ?? 0) < width / 2)
+      .attr('x', d => (d.x1 ?? 0) + 6)
       .attr('text-anchor', 'start');
   }, []);
 

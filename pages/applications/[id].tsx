@@ -163,7 +163,7 @@ const ApplicationDetails = () => {
         {/* Progress Bar */}
         <div>
           <ApplicationProgressBar
-            applicationId={id as string} // Pass the application ID
+            applicationId={parseInt(id as string, 10)} // Convert the application ID to a number
             initialStatus={editableFields.job_status} // Pass the initial job status
           />
         </div>

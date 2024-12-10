@@ -55,7 +55,7 @@ const ApplicationProgressBar: React.FC<ApplicationProgressBarProps> = ({
 
   return (
     <div style={{ padding: "20px", maxWidth: "100%" }}>
-      <Text align="center" mb="sm">
+      <Text mb="sm">
         Current Status: <b>{currentStatus}</b>
       </Text>
 
@@ -66,11 +66,6 @@ const ApplicationProgressBar: React.FC<ApplicationProgressBarProps> = ({
           color={isRejected ? "red" : "blue"}
           size="xl"
           radius="lg"
-          styles={{
-            bar: isRejected
-              ? { backgroundColor: "red" }
-              : { backgroundColor: "blue" },
-          }}
         />
         {isRejected && (
           <Center

@@ -7,7 +7,7 @@ import StatsHeader from '../components/statsHeader';
 
 export default function StatsPage() {
   // Sample data for different filter criteria
-  const dataOptions = {
+  const dataOptions: { [key: string]: { name: string; value: number; }[] } = {
     Rating: [
       { name: '5 Stars', value: 3 },
       { name: '4 Stars', value: 9 },
@@ -37,7 +37,7 @@ export default function StatsPage() {
 
   // State to handle selected filter and corresponding data
   const [selectedFilter, setSelectedFilter] = useState('Rating');
-  const data = dataOptions[selectedFilter];
+  const data = dataOptions[selectedFilter as keyof typeof dataOptions];
 
   // Colors for the chart segments
   const COLORS = ['#4CAF50', '#FFC107', '#FF5722', '#03A9F4', '#9C27B0'];
@@ -55,7 +55,7 @@ export default function StatsPage() {
             label="Filter By"
             placeholder="Select Filter"
             value={selectedFilter}
-            onChange={(value) => setSelectedFilter(value)}
+            onChange={(value) => setSelectedFilter(value ?? 'Rating')}
             data={[
               { value: 'Rating', label: 'Rating' },
               { value: 'Location', label: 'Location' },

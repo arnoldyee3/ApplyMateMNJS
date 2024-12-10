@@ -45,7 +45,7 @@ import {
     // Modal form fields
     const [jobTitle, setJobTitle] = useState("");
     const [companyName, setCompanyName] = useState("");
-    const [pay, setPay] = useState(null);
+    const [pay, setPay] = useState<string | null>(null);
     const [location, setLocation] = useState("");
     const [jobStatus, setJobStatus] = useState("Applied");
     const [jobDeadline, setJobDeadline] = useState(new Date());
@@ -58,12 +58,12 @@ import {
     useEffect(() => {
       async function fetchData() {
         try {
-          const applicationsResponse = await axios.get("/api/applications"); // Adjust API endpoint
+          const applicationsResponse = await axios.get<Application[]>("/api/applications"); // Adjust API endpoint
           setApplications(applicationsResponse.data);
   
           // Extract unique job statuses from the applications data (or use another field if needed)
-          const jobStatuses = [
-            ...new Set(applicationsResponse.data.map((app: Application) => app.job_status)),
+          const jobStatuses: string[] = [
+            ...Array.from(new Set(applicationsResponse.data.map((app: Application) => app.job_status))),
           ];
           setCategories(jobStatuses); // Set unique categories (e.g., job status)
         } catch (error) {
@@ -91,8 +91,8 @@ import {
     
         // Handle sorting for 'pay' (convert to number after removing the '$')
         if (column === 'pay') {
-          const aPay = parseInt(aValue.replace(/[^\d.-]/g, ''));
-          const bPay = parseInt(bValue.replace(/[^\d.-]/g, ''));
+          const aPay = typeof aValue === 'string' ? parseInt(aValue.replace(/[^\d.-]/g, '')) : aValue;
+          const bPay = typeof bValue === 'string' ? parseInt(bValue.replace(/[^\d.-]/g, '')) : bValue;
           aValue = aPay;
           bValue = bPay;
         }
@@ -120,8 +120,8 @@ import {
         // Handle sorting for 'status' (custom order)
         if (column === 'job_status') {
           const statusOrder = ['Not Applied', 'Applied', 'Interviewing', 'Offered', 'Accepted', 'Rejected'];
-          aValue = statusOrder.indexOf(aValue); // Get index of the status
-          bValue = statusOrder.indexOf(bValue); // Get index of the status
+          aValue = statusOrder.indexOf(aValue as string); // Get index of the status
+          bValue = statusOrder.indexOf(bValue as string); // Get index of the status
         }
     
     
@@ -133,12 +133,6 @@ import {
         }
         if (typeof aValue === 'number' && typeof bValue === 'number') {
           return direction === 'asc' ? aValue - bValue : bValue - aValue;
-        }
-    
-        if (aValue instanceof Date && bValue instanceof Date) {
-          return direction === 'asc'
-            ? aValue.getTime() - bValue.getTime()
-            : bValue.getTime() - aValue.getTime();
         }
     
         return 0; // Default case for incompatible types
@@ -242,7 +236,7 @@ import {
     };
     
     // Handling the reset of error styles on field interaction
-    const handleFieldFocus = (fieldName) => {
+    const handleFieldFocus = (fieldName: string) => {
       setValidationErrors((prevErrors) => ({
         ...prevErrors,
         [fieldName]: false,
@@ -292,7 +286,7 @@ import {
   
           {/* Selection and Filters */}
           <div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", marginLeft: "200px" }}>
-            <Group position="apart" mb="md" style={{ display: "flex", justifyContent: "space-between" }}>
+            <Group mb="md" style={{ display: "flex", justifyContent: "space-between" }}>
               {/* Left Section */}
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <Text>{selectedCount} Selected</Text>
@@ -317,7 +311,7 @@ import {
                   placeholder="Filter by Category"
                   data={categories}
                   value={filterCategory}
-                  onChange={setFilterCategory}
+                  onChange={(value) => setFilterCategory(value || '')}
                 />
                 <Button
                   radius="md"
@@ -490,7 +484,7 @@ import {
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <label style={{ marginRight: '10px' }}>Pay </label>
                 <TextInput
-                  value={pay}
+                  value={pay ?? ''}
                   onChange={(e) => setPay(e.target.value)}
                   style={{
                     width: '100%',  // You can customize the width
@@ -516,11 +510,11 @@ import {
                 <Select
                   data={["Not Applied", "Applied", "Interviewing", "Offered", "Accepted", "Rejected"]}
                   value={jobStatus}
-                  onChange={setJobStatus}
+                  onChange={(value) => setJobStatus(value || "Applied")}
                   error={validationErrors.jobStatus && "Required Field"}
                   onFocus={() => handleFieldFocus("jobStatus")}
                   style={{
-                    position:"center",
+                    // position:"center",
                     width: '82%',  // You can customize the width
                     fontSize: '16px',
                   }}
@@ -533,7 +527,7 @@ import {
                 <DateInput
                   placeholder="Enter deadline"
                   value={jobDeadline}
-                  onChange={setJobDeadline}
+                  onChange={(value) => setJobDeadline(value as Date)}
                   style={{
                     width: '100%',  // You can customize the width
                     fontSize: '16px',
@@ -558,7 +552,7 @@ import {
                 <Textarea
                   value={jobNotes}
                   onChange={(e) => setJobNotes(e.target.value)}
-                  rows='10'
+                  rows={10}
                   style={{
                     width: '100%',
                     fontSize: '16px',
@@ -573,7 +567,7 @@ import {
                 <Textarea
                   value={jobDesc}
                   onChange={(e) => setJobDesc(e.target.value)}
-                  rows='12'
+                  rows={12}
                   style={{
                     width: '100%',
                     fontSize: '16px',
@@ -588,7 +582,7 @@ import {
                     <Textarea
                       value={jobPros}
                       onChange={(e) => setJobPros(e.target.value)}
-                      rows='10'
+                      rows={10}
                       style={{
                         width: '100%',
                         fontSize: '16px',
@@ -604,7 +598,7 @@ import {
                     <Textarea
                       value={jobCons}
                       onChange={(e) => setJobCons(e.target.value)}
-                      rows='10'
+                      rows={10}
                       style={{
                         width: '100%',
                         fontSize: '16px',
