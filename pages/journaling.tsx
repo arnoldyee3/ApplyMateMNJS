@@ -9,6 +9,7 @@ import {
   TextInput,
   Textarea,
   FileInput,
+  Select,
 } from "@mantine/core";
 import { DateInput } from '@mantine/dates';
 import '@mantine/dates/styles.css';
@@ -176,6 +177,7 @@ export default function ApplicationsPage() {
     }
     setModalOpen(false);
     setCurrentEntry(null);
+    setTemplate("Blank");
   };
 
   const handleEditEntry = (entry) => {
@@ -317,6 +319,18 @@ export default function ApplicationsPage() {
         radius={0}
         transitionProps={{ transition: 'fade', duration: 200 }}
       >
+        <Select
+          label="Template"
+          placeholder="Choose a template"
+          data={[
+            { value: "Blank", label: "Blank Template" },
+            { value: "Mindfulness", label: "Mindfulness Questions" },
+            { value: "Interview", label: "Interview Preparation" },
+          ]}
+          value={template}
+          onChange={handleTemplateChange}
+          disabled={currentEntry ? currentEntry.id <= entries.length : false}
+        />
         <TextInput
           label="Title"
           placeholder="Enter journal entry title"
@@ -334,18 +348,6 @@ export default function ApplicationsPage() {
           }
           autosize= {true}
           minRows={10}
-        />
-        <Select
-          label="Template"
-          placeholder="Choose a template"
-          data={[
-            { value: "Blank", label: "Blank Template" },
-            { value: "Mindfulness", label: "Mindfulness Questions" },
-            { value: "Interview", label: "Interview Preparation" },
-          ]}
-          value={template}
-          onChange={handleTemplateChange}
-          disabled={currentEntry ? currentEntry.id <= entries.length : false}
         />
         <Text fw={500}>Attach a file</Text>
         <Button

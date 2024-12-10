@@ -15,7 +15,7 @@ export default function IndexPage() {
   return (
     <div>
       <Stack mt={70} align="center" >
-        <img src="/images/logo.png" width="890.666" height="266.666" />
+        <img src="/images/logo.png" width="30%" height="30%" />
       </Stack>
       <Stack mt={70} align="center" gap={"xl"}>
         <Button size="xl" style={buttonStyle} variant= "default" radius="lg" onClick={() => router.push('/applications')}>
