@@ -12,6 +12,7 @@ import {
     Textarea
   } from "@mantine/core";
   import { DateInput } from '@mantine/dates';
+  import '@mantine/dates/styles.css'
   import { IconStar, IconPlus, IconTrash } from "@tabler/icons-react";
   import { useState, useEffect } from "react";
   import Header from "../components/header";
